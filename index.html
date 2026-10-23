@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RoMo-GS: Efficient Online 3D Gaussian Splatting for Robot Mapping via Exposure-Integrated Motion Blur. Accepted to CoRL 2026.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="RoMo-GS | CoRL 2026">
+  <meta property="og:description" content="Efficient online 3D Gaussian Splatting for robot mapping via exposure-integrated motion blur.">
+  <meta property="og:image" content="https://sangwoojung98.github.io/RoMo-GS/assets/images/teaser.webp">
+  <title>RoMo-GS: Online 3D Gaussian Splatting for Robot Mapping | CoRL 2026</title>
+  <link rel="icon" href="assets/images/favicon.svg?v=221caa9672" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=1a6e186f46">
+  <script src="script.js?v=8e6087149b" defer></script>
+  <link rel="canonical" href="https://sangwoojung98.github.io/RoMo-GS/">
+  <meta property="og:url" content="https://sangwoojung98.github.io/RoMo-GS/">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-paper" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M8 13h8M8 17h6"/></symbol>
+    <symbol id="icon-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18"/></symbol>
+    <symbol id="icon-play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7z"/></symbol>
+    <symbol id="icon-poster" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h3M8 18h3m4-3h1m-1 3h1"/></symbol>
+    <symbol id="icon-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="icon-expand" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></symbol>
+  </svg>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Main navigation">
+      <a class="brand" href="#top"><img src="assets/images/favicon.svg?v=221caa9672" width="29" height="29" alt="">RoMo-GS</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation"><span></span><span></span></button>
+      <div class="nav-links" id="nav-links">
+        <a href="#abstract">Abstract</a><a href="#video">Video</a><a href="#method">Method</a><a href="#results">Comparison</a><a href="#bibtex">BibTeX</a>
+      </div>
+      <span class="nav-venue">CoRL 2026</span>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero container" id="top" aria-labelledby="paper-title">
+      <div class="venue"><span class="status-dot"></span>CoRL 2026<span class="venue-divider"></span><span>Poster</span></div>
+      <h1 id="paper-title"><span class="project-name">RoMo-GS</span><span class="paper-title">Efficient Online 3D Gaussian Splatting<br class="desktop-break"> for Robot Mapping via<br class="desktop-break"> Exposure-Integrated Motion Blur</span></h1>
+      <p class="authors"><span><a href="https://sangwoojung98.github.io/" target="_blank" rel="noopener noreferrer">Sangwoo Jung</a><sup>1,2</sup></span><span><a href="https://www.linkedin.com/in/dideng" target="_blank" rel="noopener noreferrer">Di Deng</a><sup>1</sup></span><span><a href="https://jiahui-fu.github.io/" target="_blank" rel="noopener noreferrer">Jiahui Fu</a><sup>1</sup></span><span><a href="https://scholar.google.com/citations?user=69iQSpoAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Laura Herlant</a><sup>1*</sup></span><span><a href="https://ayoungk.github.io/" target="_blank" rel="noopener noreferrer">Ayoung Kim</a><sup>2*</sup></span><span><a href="https://jeffreyyh.github.io/" target="_blank" rel="noopener noreferrer">Yafei Hu</a><sup>1*</sup></span></p>
+      <p class="affiliations"><span><sup>1</sup> RAI Institute, United States</span><span><sup>2</sup> Seoul National University, South Korea</span></p>
+      <p class="corresponding"><sup>*</sup> Co-corresponding authors</p>
+      <div class="resource-links" aria-label="Paper resources">
+        <a class="button button-primary" href="https://arxiv.org/abs/2610.24605" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#icon-paper"/></svg>Paper<svg class="icon small"><use href="#icon-arrow"/></svg></a>
+        <button class="button button-unavailable" type="button" disabled title="GitHub code release: TBD"><svg class="icon"><use href="#icon-code"/></svg>Code <span class="tbd">TBD</span></button>
+        <a class="button" href="#video"><svg class="icon"><use href="#icon-play"/></svg>Video</a>
+        <a class="button" href="assets/docs/RoMo-GS-CoRL2026-poster.pdf" target="_blank" rel="noopener"><svg class="icon"><use href="#icon-poster"/></svg>Poster</a>
+        <a class="button" href="#bibtex"><span class="quote-icon" aria-hidden="true">❞</span>BibTeX</a>
+      </div>
+      <figure class="hero-figure">
+        <a class="figure-link" href="assets/images/teaser.webp?v=1a497a38fb" target="_blank" rel="noopener" aria-label="Open RoMo-GS overview figure at full resolution"><img src="assets/images/teaser.webp?v=1a497a38fb" width="2400" height="950" alt="Motion-blurred observations from a handheld rig, a Spot robot, and a Franka arm are mapped into a compact 3D Gaussian scene with sharp rendered views." fetchpriority="high"><span class="expand-hint"><svg class="icon"><use href="#icon-expand"/></svg></span></a>
+        <figcaption><strong>From motion-blurred observations to sharp 3D maps.</strong> RoMo-GS reconstructs scenes online from a visual tracker's output, jointly refining the camera state and Gaussian map.</figcaption>
+      </figure>
+      <div class="key-results" aria-label="Key research results">
+        <div><strong>O(1)</strong><span>Exposure integration per Gaussian</span></div>
+        <div><strong>15–150<span class="metric-unit">×</span></strong><span>Faster than offline deblurring baselines</span></div>
+        <div><strong>~20<span class="metric-unit">%</span></strong><span>Fewer Gaussians than MODP</span></div>
+      </div>
+    </section>
+
+    <section class="section section-tinted" id="abstract" aria-labelledby="abstract-title">
+      <div class="container abstract-layout">
+        <div><p class="eyebrow">Abstract</p><h2 id="abstract-title">Robot mapping,<br> with motion in mind.</h2><p class="section-deck">Sharp renderings. Compact maps.<br> Online reconstruction.</p></div>
+        <div class="prose">
+          <p>Online 3D Gaussian Splatting (3DGS) is emerging as a practical representation for robotics. Real-world deployment, however, brings two challenges: rapid robot motion produces blurry observations that corrupt geometry and camera poses, while continuous mapping can grow the number of Gaussians without bound.</p>
+          <p><strong>RoMo-GS addresses both.</strong> Instead of averaging multiple discrete sub-frames, we analytically integrate each projected Gaussian over the exposure interval, yielding <strong>O(1) complexity per Gaussian</strong>. A Hessian-based pruning score controls map growth, while joint Adam optimization refines poses, velocities, and Gaussians, followed by an online Levenberg–Marquardt step on the Gaussians.</p>
+          <p>Across public and self-collected datasets, RoMo-GS achieves competitive rendering quality with offline deblurring methods at substantially lower running time, and retains about 20% fewer Gaussians than the online MODP baseline at comparable quality.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="video" aria-labelledby="video-title">
+      <div class="section-heading"><div><p class="eyebrow">Watch the system</p><h2 id="video-title">RoMo-GS in action.</h2></div><span class="section-meta">03:00 · Project video</span></div>
+      <div class="video-frame"><video id="project-video" controls playsinline preload="metadata" poster="assets/images/video-poster.webp?v=8959d0cde3" aria-label="RoMo-GS project video"><source src="assets/videos/romo-gs.mp4?v=5e71382fbf" type="video/mp4">Your browser does not support embedded video. <a href="assets/videos/romo-gs.mp4?v=5e71382fbf">Download the project video</a>.</video></div>
+      <div class="video-chapters" aria-label="Video highlights"><button type="button" data-time="0"><span>00:00</span> Method overview</button><button type="button" data-time="40"><span>00:40</span> Reconstruction comparison</button><button type="button" data-time="70"><span>01:10</span> Motion deblurring</button><button type="button" data-time="110"><span>01:50</span> Handheld demonstration</button><button type="button" data-time="150"><span>02:30</span> Robot demonstration</button></div>
+    </section>
+
+    <section class="section section-tinted" id="method" aria-labelledby="method-title">
+      <div class="container">
+        <p class="eyebrow">Method</p><h2 id="method-title">One exposure. One rasterization pass.</h2>
+        <p class="section-intro">RoMo-GS combines exposure-integrated motion blur, joint optimization, and online density control in a tracker-agnostic mapping backend.</p>
+        <figure class="paper-figure"><a class="figure-link" href="assets/images/pipeline.webp?v=55d89da963" target="_blank" rel="noopener" aria-label="Open the method pipeline at full resolution"><img src="assets/images/pipeline.webp?v=55d89da963" width="2800" height="846" alt="RoMo-GS pipeline: visual tracking, Gaussian insertion, exposure-integrated motion blur, blur-aware AccuTile, joint Adam updates, online LM refinement, and Hessian-based pruning." loading="lazy"><span class="expand-hint"><svg class="icon"><use href="#icon-expand"/></svg></span></a><figcaption>Landmarks and depth samples initialize Gaussians. The backend models motion blur in a single pass and produces a compact map with sharp online renderings.</figcaption></figure>
+        <div class="contributions">
+          <article><span class="step-number">01</span><h3>Exposure-integrated<br> motion blur</h3><p>Analytically evaluate each projected Gaussian's exposure-time integral using the error function, under a linear screen-space motion approximation.</p></article>
+          <article><span class="step-number">02</span><h3>Single-sample<br> blur rasterization</h3><p>Render a motion-blurred frame in one CUDA rasterization pass. The per-Gaussian cost stays constant instead of growing with the number of temporal samples.</p></article>
+          <article><span class="step-number">03</span><h3>Online optimization<br> &amp; density control</h3><p>Jointly refine pose, velocity, and Gaussians with Adam, apply an online LM step to the map, and remove redundant Gaussians with a Hessian-based score.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="results" aria-label="Interactive reconstruction comparison">
+      <figure class="comparison-figure"><div class="image-comparison" id="image-comparison"><img src="assets/images/comparison-input.webp?v=4f99f6bb0c" width="1265" height="790" alt="Motion-blurred ETH3D observation of tabletop objects." loading="lazy"><img class="comparison-after" src="assets/images/comparison-ours.webp?v=7956e565c8" width="1265" height="790" alt="Sharper RoMo-GS reconstruction of the same tabletop scene." loading="lazy"><span class="comparison-label label-left">RoMo-GS</span><span class="comparison-label label-right">Blurry input</span><span class="comparison-divider" aria-hidden="true"><span>↔</span></span><input type="range" min="0" max="100" value="50" aria-label="Reveal RoMo-GS reconstruction" aria-valuetext="50 percent RoMo-GS reconstruction"></div></figure>
+    </section>
+
+    <section class="section container" id="bibtex" aria-labelledby="bibtex-title">
+      <div class="citation-content">
+        <div class="citation-heading"><p class="eyebrow">Citation</p><h2 id="bibtex-title">BibTeX</h2></div>
+        <div class="citation-box">
+          <button class="copy-button" type="button" aria-label="Copy BibTeX to clipboard" title="Copy BibTeX to clipboard"><svg class="icon"><use href="#icon-copy"/></svg><span id="copy-label">Copy</span></button>
+          <pre><code id="bibtex-code">@article{jung2026romo,
+  title={RoMo-GS: Efficient Online 3D Gaussian Splatting for Robot Mapping via Exposure-Integrated Motion Blur},
+  author={Jung, Sangwoo and Deng, Di and Fu, Jiahui and Herlant, Laura and Kim, Ayoung and Hu, Yafei},
+  journal={arXiv preprint arXiv:2610.24605},
+  year={2026}
+}</code></pre>
+        </div>
+        <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
+      </div>
+      <div class="acknowledgment"><h3>Acknowledgment</h3><p>We thank ETH Zürich for providing experimental space for real-world testing, data collection, and demo video filming.</p></div>
+      <div class="institution-logos" aria-label="Author institutions"><img class="rai-logo" src="assets/images/rai-logo.png" width="600" height="121" alt="RAI Institute" loading="lazy"><div class="snu-lockup"><img src="assets/images/snu-logo.png" width="154" height="160" alt="" loading="lazy"><span>Seoul National University<small>Department of Mechanical Engineering</small></span></div><img class="rpm-logo" src="assets/images/rpm-logo.png" width="131" height="160" alt="RPM Robotics Lab" loading="lazy"></div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-project"><a class="brand" href="#top">RoMo-GS <span>· CoRL 2026</span></a><p class="footer-title">RoMo-GS: Efficient Online 3D Gaussian Splatting for Robot Mapping via Exposure-Integrated Motion Blur</p></div>
+      <div class="footer-links"><p class="template-credit">Website design adapted from the <a href="https://garlileo.github.io/GaRLILEO/" target="_blank" rel="noopener noreferrer">GaRLILEO</a> project page.</p><a class="back-to-top" href="#top">Back to top ↑</a></div>
+    </div>
+  </footer>
+</body>
+</html>

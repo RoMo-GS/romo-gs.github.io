@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sangwoojung98.github.io/RoMo-GS/sitemap.xml
